@@ -431,6 +431,14 @@ int main()
        glm::vec3(3.0f, 15.0f,  -3.0f),//3
        glm::vec3(-2.0f, 15.0f,  -3.0f) //4
     };
+    glm::vec3 sphereBishopPositions[]{
+          glm::vec3(2.0f, 16.0f, 4.0f),//1
+        glm::vec3(-1.0f, 16.0f, 4.0f),//2
+        glm::vec3(2.0f, 16.0f, -3.0f),//3
+        glm::vec3(-1.0f, 16.0f, -3.0f)//4
+    };
+
+
 
     glm::vec3 cylinderCastlePositions[] = {
        glm::vec3(4.0f, 14.0f,  4.0f), //1
@@ -444,6 +452,14 @@ int main()
        glm::vec3(3.0f, 14.0f,  -3.0f),//3
        glm::vec3(-2.0f, 14.0f,  -3.0f) //4
     };
+    glm::vec3 cylinderBishopPosition[] = {
+         glm::vec3(2.0f, 14.0f, 4.0f),//1
+        glm::vec3(-1.0f, 14.0f, 4.0f),//2
+        glm::vec3(2.0f, 14.0f, -3.0f),//3
+        glm::vec3(-1.0f, 14.0f, -3.0f)//4
+    };
+    
+
 
     glm::vec3 conePawnPositions[] = {
        glm::vec3(4.0f, 14.5f,  3.0f), //1
@@ -465,10 +481,35 @@ int main()
        glm::vec3(-3.0f, 14.5f,  -2.0f)  //8
     }; 
     glm::vec3 coneKnightPositions[] = {
-       glm::vec3(3.0f, 15.0f,  4.0f), //1
-       glm::vec3(-2.0f, 15.0f,  4.0f), //2
-       glm::vec3(3.0f, 15.0f,  -3.0f),//3
-       glm::vec3(-2.0f, 15.0f,  -3.0f) //4
+       glm::vec3(3.0f, 15.0f,  3.5f), //1
+       glm::vec3(-2.0f, 15.0f,  3.5f), //2
+       glm::vec3(3.0f, 15.0f,  -3.5f),//3
+       glm::vec3(-2.0f, 15.0f,  -3.5f) //4
+    };
+    glm::vec3 coneBishopPositions[] = {
+         glm::vec3(2.0f, 15.2f, 4.0f),//1
+        glm::vec3(-1.0f, 15.2f, 4.0f),//2
+        glm::vec3(2.0f, 15.2f, -3.0f),//3
+        glm::vec3(-1.0f,15.2f,-3.0f)//4
+
+    };
+    glm::vec3 coneQueen1Positions[] = {
+
+                glm::vec3(1.0f, 14.0f, 4.0f),//1
+        glm::vec3(1.0f, 14.0f, -3.0f),//2
+
+    };
+    glm::vec3 coneQueen2Positions[] = {
+                glm::vec3(1.0f, 15.0f, 4.0f),//1
+        glm::vec3(1.0f, 15.0f, -3.0f)//2
+    };
+
+    glm::vec3 coneKingPositions[] = {
+                glm::vec3(0.0f, 14.0f, 4.0f),//1
+        glm::vec3(0.0f, 14.0f, -3.0f),//2
+
+                glm::vec3(0.0f, 15.0f, 4.0f),//3
+        glm::vec3(0.0f, 15.0f, -3.0f)//4
     };
 
     glm::vec3 cubeCastlePositions[] = {
@@ -477,6 +518,8 @@ int main()
        glm::vec3(4.0f, 15.0f,  -3.0f),//3
        glm::vec3(-3.0f, 15.0f,  -3.0f) //4
     };
+
+
 
 
     #pragma region Vertex data
@@ -975,14 +1018,236 @@ int main()
 #pragma endregion
 
         #pragma region Bishop
+        ////cylinder bishops
+        model = glm::mat4(1.0f);
+        //model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 1.0f, 1.0f));
+        model = glm::translate(model, glm::vec3(0.0F, 50.0F, 0.0F));
+        //model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
+        //model = glm::scale(model, glm::vec3(500.0f)); // Change Cube Scale
+
+        myShader.use();
+
+        myShader.setMat4("model", model);
+        myShader.setMat4("view", view);
+        myShader.setMat4("projection", projection);
+
+        for (unsigned int i = 0; i < 4; i++)
+        {
+            // calculate the model matrix for each object and pass it to shader before drawing
+            glm::mat4 model = glm::mat4(1.0f);
+            model = glm::translate(model, cylinderBishopPosition[i]);
+            model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+            float angle = 20.0f * i;
+            model = glm::scale(model, glm::vec3(1.0f));
+            //if (i % 3 == 0)  // every 3rd iteration (including the first) we set the angle using GLFW's time function.  ... Use this for as if (i % 2 ==0) for colour of cubes.
+            //angle = glfwGetTime() * 25.0f; // Rotation of cubes overtime
+            //model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+            if (i < 2)
+                glBindTexture(GL_TEXTURE_2D, texture1);
+            else
+            {
+                glBindTexture(GL_TEXTURE_2D, textureT2);
+            }
+
+            myShader.setMat4("model", model);;
+
+            //glDrawArrays(GL_TRIANGLES, 0, 36);
+            myCylinder.Draw(myShader);
+        }
+
+        ////cone bishops
+        model = glm::mat4(1.0f);
+        //model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = glm::translate(model, glm::vec3(0.0F, 50.0F, 0.0F));
+        //model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
+        //model = glm::scale(model, glm::vec3(500.0f)); // Change Cube Scale
+
+        myShader.use();
+
+        myShader.setMat4("model", model);
+        myShader.setMat4("view", view);
+        myShader.setMat4("projection", projection);
+
+        for (unsigned int i = 0; i < 4; i++)
+        {
+            // calculate the model matrix for each object and pass it to shader before drawing
+            glm::mat4 model = glm::mat4(1.0f);
+            model = glm::translate(model, coneBishopPositions[i]);
+            model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+            float angle = 20.0f * i;
+            //if (i % 3 == 0)  // every 3rd iteration (including the first) we set the angle using GLFW's time function.  ... Use this for as if (i % 2 ==0) for colour of cubes.
+            //angle = glfwGetTime() * 25.0f; // Rotation of cubes overtime
+            //model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+            if (i < 2)
+                glBindTexture(GL_TEXTURE_2D, texture1);
+            else
+            {
+                glBindTexture(GL_TEXTURE_2D, textureT2);
+            }
+
+
+            myShader.setMat4("model", model);;
+
+            //glDrawArrays(GL_TRIANGLES, 0, 36);
+            myCone.Draw(myShader);
+        }
+
+        ////sphere bishops
+        model = glm::mat4(1.0f);
+        //model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = glm::translate(model, glm::vec3(0.0F, 50.0F, 0.0F));
+        //model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
+        //model = glm::scale(model, glm::vec3(500.0f)); // Change Cube Scale
+
+        myShader.use();
+
+        myShader.setMat4("model", model);
+        myShader.setMat4("view", view);
+        myShader.setMat4("projection", projection);
+
+        for (unsigned int i = 0; i < 4; i++)
+        {
+            // calculate the model matrix for each object and pass it to shader before drawing
+            glm::mat4 model = glm::mat4(1.0f);
+            model = glm::translate(model, sphereBishopPositions[i]);
+            model = glm::scale(model, glm::vec3(0.6f, 0.6f, 0.6f));
+            float angle = 20.0f * i;
+            //if (i % 3 == 0)  // every 3rd iteration (including the first) we set the angle using GLFW's time function.  ... Use this for as if (i % 2 ==0) for colour of cubes.
+            //angle = glfwGetTime() * 25.0f; // Rotation of cubes overtime
+            //model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+            if (i < 2)
+                glBindTexture(GL_TEXTURE_2D, texture1);
+            else
+            {
+                glBindTexture(GL_TEXTURE_2D, textureT2);
+            }
+
+            myShader.setMat4("model", model);;
+
+            //glDrawArrays(GL_TRIANGLES, 0, 36);
+            mySphere.Draw(myShader);
+        }
 
 #pragma endregion
 
         #pragma region Queen
 
+        ////cone queen
+        model = glm::mat4(1.0f);
+        //model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = glm::translate(model, glm::vec3(0.0F, 50.0F, 0.0F));
+        //model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
+        //model = glm::scale(model, glm::vec3(500.0f)); // Change Cube Scale
+
+        myShader.use();
+
+        myShader.setMat4("model", model);
+        myShader.setMat4("view", view);
+        myShader.setMat4("projection", projection);
+
+        for (unsigned int i = 0; i < 4; i++)
+        {
+            // calculate the model matrix for each object and pass it to shader before drawing
+            glm::mat4 model = glm::mat4(1.0f);
+            model = glm::translate(model, coneQueen1Positions[i]);
+            model = glm::rotate(model, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+            float angle = 20.0f * i;
+            //if (i % 3 == 0)  // every 3rd iteration (including the first) we set the angle using GLFW's time function.  ... Use this for as if (i % 2 ==0) for colour of cubes.
+            //angle = glfwGetTime() * 25.0f; // Rotation of cubes overtime
+            //model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+            if (i < 2)
+                glBindTexture(GL_TEXTURE_2D, texture1);
+            else
+            {
+                glBindTexture(GL_TEXTURE_2D, textureT2);
+            }
+
+
+            myShader.setMat4("model", model);;
+
+            //glDrawArrays(GL_TRIANGLES, 0, 36);
+            myCone.Draw(myShader);
+        }
+
+        ////cone queen
+        model = glm::mat4(1.0f);
+        //model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = glm::translate(model, glm::vec3(0.0F, 50.0F, 0.0F));
+        //model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
+        //model = glm::scale(model, glm::vec3(500.0f)); // Change Cube Scale
+
+        myShader.use();
+
+        myShader.setMat4("model", model);
+        myShader.setMat4("view", view);
+        myShader.setMat4("projection", projection);
+
+        for (unsigned int i = 0; i < 4; i++)
+        {
+            // calculate the model matrix for each object and pass it to shader before drawing
+            glm::mat4 model = glm::mat4(1.0f);
+            model = glm::translate(model, coneQueen2Positions[i]);
+            model = glm::rotate(model, glm::radians(0.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+            float angle = 20.0f * i;
+            //if (i % 3 == 0)  // every 3rd iteration (including the first) we set the angle using GLFW's time function.  ... Use this for as if (i % 2 ==0) for colour of cubes.
+            //angle = glfwGetTime() * 25.0f; // Rotation of cubes overtime
+            //model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+            if (i < 2)
+                glBindTexture(GL_TEXTURE_2D, texture1);
+            else
+            {
+                glBindTexture(GL_TEXTURE_2D, textureT2);
+            }
+
+
+            myShader.setMat4("model", model);;
+
+            //glDrawArrays(GL_TRIANGLES, 0, 36);
+            myCone.Draw(myShader);
+        }
+
+
 #pragma endregion
 
         #pragma region King
+
+        ////cone queen
+        model = glm::mat4(1.0f);
+        //model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = glm::translate(model, glm::vec3(0.0F, 50.0F, 0.0F));
+        //model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
+        //model = glm::scale(model, glm::vec3(500.0f)); // Change Cube Scale
+
+        myShader.use();
+
+        myShader.setMat4("model", model);
+        myShader.setMat4("view", view);
+        myShader.setMat4("projection", projection);
+
+        for (unsigned int i = 0; i < 4; i++)
+        {
+            // calculate the model matrix for each object and pass it to shader before drawing
+            glm::mat4 model = glm::mat4(1.0f);
+            model = glm::translate(model, coneKingPositions[i]);
+            model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+            float angle = 20.0f * i;
+            //if (i % 3 == 0)  // every 3rd iteration (including the first) we set the angle using GLFW's time function.  ... Use this for as if (i % 2 ==0) for colour of cubes.
+            //angle = glfwGetTime() * 25.0f; // Rotation of cubes overtime
+            //model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+            if (i < 2)
+                glBindTexture(GL_TEXTURE_2D, texture1);
+            else
+            {
+                glBindTexture(GL_TEXTURE_2D, textureT2);
+            }
+
+
+            myShader.setMat4("model", model);;
+
+            //glDrawArrays(GL_TRIANGLES, 0, 36);
+            myCone.Draw(myShader);
+        }
+
 
 #pragma endregion
 
