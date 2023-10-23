@@ -1,0 +1,14 @@
+﻿  main.cpp
+C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(506,28): warning C4018: '<': signed/unsigned mismatch
+C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(508,32): warning C4018: '<': signed/unsigned mismatch
+C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(586,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(619,40): warning C4018: '<': signed/unsigned mismatch
+C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(207,18): warning C4101: 'texture2': unreferenced local variable
+C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(1059,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(1060,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(1064,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(1065,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(1067,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(1068,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(1076,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  GADE7312_GameEngine.vcxproj -> C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\x64\Debug\GADE7312_GameEngine.exe
