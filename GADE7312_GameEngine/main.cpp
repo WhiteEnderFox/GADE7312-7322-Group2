@@ -18,7 +18,7 @@
 #include "basicSphereMesh.h"
 
 #include "Camera.h"
-
+#include "model.h"
 #include <filesystem>
 
 #include <glm/gtc/matrix_transform.hpp>
@@ -200,6 +200,9 @@ int main()
     myShader.setInt("textureT3", 2);
 #pragma endregion
 
+    std::filesystem::path castlemodel = "resources/Models/rook.obj";
+    std::filesystem::path knightmodel = "resources/Models/knight.obj";
+    std::filesystem::path bishopmodel = "resources/Models/bishop.obj";
 
     // load and create a texture
     // -------------------------
@@ -1248,6 +1251,35 @@ int main()
             myCone.Draw(myShader);
         }
 
+#pragma endregion
+
+    #pragma region ModelCastle
+
+        glm::mat4 model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
+        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
+        myShader.setMat4("model", model);
+        castlemodel.Draw(castlemodel);
+
+#pragma endregion
+
+#pragma region Modelbishop
+
+        glm::mat4 model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(5.0f, 5.0f, 5.0f)); // translate it down so it's at the center of the scene
+        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
+        myShader.setMat4("model", model);
+        bishopmodel.Draw(bishopmodel);
+
+#pragma endregion
+
+#pragma region Modelknight
+
+        glm::mat4 model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(10.0f, 10.0f, 10.0f)); // translate it down so it's at the center of the scene
+        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
+        myShader.setMat4("model", model);
+        knightmodel.Draw(knightmodel);
 
 #pragma endregion
 
@@ -1263,6 +1295,7 @@ int main()
     // ------------------------------------------------------------------
     glfwTerminate();
     return 0;
+
 }
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
