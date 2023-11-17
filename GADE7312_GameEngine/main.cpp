@@ -865,6 +865,14 @@ int main()
     double timeDiff;
     unsigned int counter = 0;
 
+   /* const char* modelpath1 = "resources/Models/rook.obj";
+    const char* modelpath2 = "resources/Models/knight.obj";
+    const char* modelpath3 = "resources/Models/bishop.obj";*/
+
+    /*Model castlemodel(modelpath1);
+    Model knightmodel(modelpath2);
+    Model bishopmodel(modelpath3);*/
+
     while (!glfwWindowShouldClose(window))
     {
         // per-frame time logic

@@ -2,14 +2,15 @@
 C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\Imports.h(66,50): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
 C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(678,28): warning C4018: '<': signed/unsigned mismatch
 C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(680,32): warning C4018: '<': signed/unsigned mismatch
-C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(872,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(939,40): warning C4018: '<': signed/unsigned mismatch
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(880,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(947,40): warning C4018: '<': signed/unsigned mismatch
 C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(334,18): warning C4101: 'texture2': unreferenced local variable
-C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1864,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1865,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1869,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1870,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1872,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1873,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1881,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1872,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1873,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1877,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1878,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1880,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1881,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1889,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   GADE7312_GameEngine.vcxproj -> C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\x64\Debug\GADE7312_GameEngine.exe
