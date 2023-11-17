@@ -108,6 +108,8 @@ int main()
     //instantiate shader
     Shader myShader("resources/shaders/basic.shader.vert", "resources/shaders/basic.shader.frag");
     Shader heightShader("resources/shaders/heightmap.shader.vert", "resources/shaders/heightmap.shader.frag");
+    Shader lightingShader("resources/shaders/lighting.shader.vert", "resources/shaders/lighting.shader.frag");
+    Shader lightCubeShader("resources/shaders/lightSource.shader.vert", "resources/shaders/lightSource.shader.frag");
 
     //load texture
     #pragma region TEXTURE
@@ -666,6 +668,12 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//******* changes);
 
         //glBindTexture(GL_TEXTURE_2D, texture1);
+
+        //Lighting
+        // don't forget to use the corresponding shader program first (to set the uniform)
+        lightingShader.use();
+        lightingShader.setVec3("objectColor", glm::vec3( 1.0f, 0.5f, 0.31f));
+        lightingShader.setVec3("lightColor", glm::vec3( 1.0f, 1.0f, 1.0f));
         
         #pragma region Heightmap
         // be sure to activate shader when setting uniforms/drawing objects
@@ -1442,7 +1450,18 @@ int main()
         }
 #pragma endregion
 
-        
+        //LightSource Cube
+
+        lightCubeShader.use();
+        glm::vec3 lightPos(0.0f, 20.0f, 0.0f);
+        lightingShader.setVec3("lightPos", lightPos);
+        lightCubeShader.setMat4("projection", projection);
+        lightCubeShader.setMat4("view", view);
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, lightPos);
+        model = glm::scale(model, glm::vec3(0.2f));
+        lightCubeShader.setMat4("model", model);
+        myCube.Draw(lightCubeShader);
 
         //math
         

@@ -1,15 +1,15 @@
 ﻿  main.cpp
-C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(552,28): warning C4018: '<': signed/unsigned mismatch
-C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(554,32): warning C4018: '<': signed/unsigned mismatch
-C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(652,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(688,40): warning C4018: '<': signed/unsigned mismatch
-C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(208,18): warning C4101: 'texture2': unreferenced local variable
-C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(1519,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(1520,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(1524,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(1525,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(1527,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(1528,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\GADE7312_GameEngine\main.cpp(1536,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(554,28): warning C4018: '<': signed/unsigned mismatch
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(556,32): warning C4018: '<': signed/unsigned mismatch
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(654,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(696,40): warning C4018: '<': signed/unsigned mismatch
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(210,18): warning C4101: 'texture2': unreferenced local variable
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1535,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1536,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1540,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1541,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1543,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1544,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\GADE7312_GameEngine\main.cpp(1552,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  GADE7312_GameEngine.vcxproj -> C:\Users\miyth\source\repos\GADE7312_GameEngine - Copy\x64\Debug\GADE7312_GameEngine.exe
+  GADE7312_GameEngine.vcxproj -> C:\Users\miyth\source\repos\GADE7312_GameEngine_task3\x64\Debug\GADE7312_GameEngine.exe
