@@ -136,10 +136,11 @@ int main()
     Shader lightCubeShader("resources/shaders/lightSource.shader.vert", "resources/shaders/lightSource.shader.frag");
     Shader skyboxShader("resources/shaders/skybox.shader.vert", "resources/shaders/skybox.shader.frag");
     Shader textShader("resources/shaders/text.shader.vert", "resources/shaders/text.shader.frag");
-
+    Shader importShader("resources/shaders/importBasic.shader.vert", "resources/shaders/importsBasic.shader.vert");
     glm::mat4 projection = glm::ortho(0.0f, static_cast<float>(SCR_WIDTH), 0.0f, static_cast<float>(SCR_HEIGHT));
     textShader.use();
     glUniformMatrix4fv(glGetUniformLocation(textShader.ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+
 
     
     #pragma region FreetypeFontText
@@ -323,9 +324,13 @@ int main()
     myShader.setInt("textureT3", 2);
 #pragma endregion
 
-    std::filesystem::path castlemodel = "resources/Models/rook.obj";
-    std::filesystem::path knightmodel = "resources/Models/knight.obj";
-    std::filesystem::path bishopmodel = "resources/Models/bishop.obj";
+    const char* modelpath1 = "resources/Models/rook.obj";
+    const char* modelpath2 = "resources/Models/knight.obj";
+    const char* modelpath3 = "resources/Models/bishop.obj";
+    
+    Model castlemodel(modelpath1);
+    Model knightmodel(modelpath2);
+    Model bishopmodel(modelpath3);
 
     #pragma region Heightmap & texture
     // load and create a texture
@@ -1740,12 +1745,15 @@ int main()
 
 #pragma endregion
 
+        //import models
+        importShader.use();
+
     #pragma region ModelCastle
 
         //glm::mat4 model = glm::mat4(1.0f);
         //model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
         //model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
-        //myShader.setMat4("model", model);
+        //importShader.setMat4("model", model);
         //castlemodel.Draw(castlemodel);
 
 #pragma endregion
@@ -1755,7 +1763,7 @@ int main()
         //glm::mat4 model = glm::mat4(1.0f);
         //model = glm::translate(model, glm::vec3(5.0f, 5.0f, 5.0f)); // translate it down so it's at the center of the scene
         //model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
-        //myShader.setMat4("model", model);
+        //importShader.setMat4("model", model);
         //bishopmodel.Draw(bishopmodel);
 
 #pragma endregion
@@ -1765,7 +1773,7 @@ int main()
         //glm::mat4 model = glm::mat4(1.0f);
         //model = glm::translate(model, glm::vec3(10.0f, 10.0f, 10.0f)); // translate it down so it's at the center of the scene
         //model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
-        //myShader.setMat4("model", model);
+        //importShader.setMat4("model", model);
         //knightmodel.Draw(knightmodel);
 
 
