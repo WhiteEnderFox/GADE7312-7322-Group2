@@ -113,7 +113,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;freetype.lib;assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -145,6 +145,8 @@
     <ClInclude Include="BasicCubeMesh.h" />
     <ClInclude Include="basicSphereMesh.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Imports.h" />
+    <ClInclude Include="model.h" />
     <ClInclude Include="ObjectContainer.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
@@ -154,6 +156,16 @@
     <None Include="resources\shaders\basic.shader.vert" />
     <None Include="resources\shaders\heightmap.shader.frag" />
     <None Include="resources\shaders\heightmap.shader.vert" />
+    <None Include="resources\shaders\importBasic.shader.vert" />
+    <None Include="resources\shaders\importsBasic.shader.frag" />
+    <None Include="resources\shaders\lighting.shader.frag" />
+    <None Include="resources\shaders\lighting.shader.vert" />
+    <None Include="resources\shaders\lightSource.shader.frag" />
+    <None Include="resources\shaders\lightSource.shader.vert" />
+    <None Include="resources\shaders\skybox.shader.frag" />
+    <None Include="resources\shaders\skybox.shader.vert" />
+    <None Include="resources\shaders\text.shader.frag" />
+    <None Include="resources\shaders\text.shader.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
